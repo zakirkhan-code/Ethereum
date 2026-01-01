@@ -18,9 +18,50 @@
     --foreground: #ededed;
   }
 }
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE & old Edge */
+}
+
+.animate-scrollUp {
+  animation: scrollUp 12s linear infinite;
+}
 
 body {
-  background: var(--background);
+  background-image: url('/bg.png'); /* yahan apni image ka path lagao */
+  background-size: cover;      /* image ko poore screen pe fit kare */
+  background-position: center; /* image ko center mai rakhe */
+  background-repeat: no-repeat; /* image repeat na ho */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+.main-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.main-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+
+
+
+
+.main-container{
+  max-width: 450px;
+  margin-inline: auto;
+  padding-inline: 5px;
 }
